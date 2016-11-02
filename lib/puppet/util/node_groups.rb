@@ -28,7 +28,7 @@ class Puppet::Util::Node_groups < parent
       classifier_url = "https://#{nc_settings['server']}:#{nc_settings['port']}/classifier-api"
     end
 
-    super(classifier_url, auth_info)
+    super(classifier_url, auth_info) if self.is_a?(PuppetClassify)
   end
 
   # Transform the node group array in to a hash
